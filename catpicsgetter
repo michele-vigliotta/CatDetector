@@ -1,0 +1,17 @@
+from bing_image_downloader import downloader
+import os
+
+# Crea cartella se non esiste
+dataset_path = "C:/Users/miche/Desktop/Projects/CatDetector/ImmaginiGattiBing"
+os.makedirs(dataset_path, exist_ok=True)
+
+# Scarica le immagini
+downloader.download("cat", 
+                   limit=200, 
+                   output_dir=dataset_path,
+                   adult_filter_off=True,
+                   force_replace=False,
+                   timeout=15,
+                   verbose=True)
+
+print(f"Immagini scaricate in: {dataset_path}/cat/")
