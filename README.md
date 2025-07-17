@@ -1,7 +1,7 @@
-🐱 CatDetector
+#🐱 CatDetector
 CatDetector is an object detection project based on YOLOv11, designed to detect cats in images, videos, and real-time webcam streams.
 
-📌 Overview
+##📌 Overview
 The model identifies cats by drawing bounding boxes around them, along with confidence scores. It was trained on a custom dataset consisting of:
 
 570 training images
@@ -10,7 +10,7 @@ The model identifies cats by drawing bounding boxes around them, along with conf
 
 The dataset was partially annotated manually.
 
-🧠 Training Details
+##🧠 Training Details
 Three separate training sessions were performed on the same dataset:
 
 YOLOv11n from scratch (local):
@@ -31,7 +31,7 @@ YOLOv11n with pretrained weights (Google Colab):
 
 Starting from yolo11n.pt
 
-🛠️ Dependencies
+##🛠️ Dependencies
 Make sure the following packages are installed:
 
 bash
@@ -46,7 +46,7 @@ Modifica
 pip install ultralytics
 ⚠️ If you're using a custom YOLOv11 version, make sure the repository is cloned and properly set up.
 
-📂 Project Structure (example)
+##📂 Project Structure (example)
 arduino
 Copia
 Modifica
@@ -62,5 +62,5 @@ CatDetector/
 ├── yolo11n.yaml
 ├── yolo11n.pt
 └── README.md
-🖼️ Example Output
+##🖼️ Example Output
 Add sample images showing detected cats with bounding boxes and confidence scores here.
