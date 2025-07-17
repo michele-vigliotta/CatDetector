@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 
 # Carica il tuo modello allenato
-model = YOLO("runs/detect/train/weights/best.pt")
+model = YOLO("runs_colab_pretrained/content/runs/detect/train2/weights/best.pt")
 
 # Avvia la webcam
 cap = cv2.VideoCapture(0)  # 0 = webcam predefinita

@@ -4,7 +4,7 @@ from ultralytics import YOLO
 from pathlib import Path
 
 
-def process_video_with_yolo(model_path, input_video_path, conf_threshold=0.05):
+def process_video_with_yolo(model_path, input_video_path, conf_threshold):
     """
     Processa un video con un modello YOLO e salva il video con i detection box
     nella stessa cartella del video input
@@ -15,7 +15,7 @@ def process_video_with_yolo(model_path, input_video_path, conf_threshold=0.05):
     
     # Genera il nome del file output
     input_path = Path(input_video_path)
-    output_path = input_path.parent / f"{input_path.stem}_detected{input_path.suffix}"
+    output_path = input_path.parent / f"{input_path.stem}_{modello_scelto}{input_path.suffix}"
     
     # Apri il video di input
     cap = cv2.VideoCapture(input_video_path)
@@ -49,8 +49,33 @@ def process_video_with_yolo(model_path, input_video_path, conf_threshold=0.05):
 
 
 # Modifica questi percorsi con i tuoi file
-MODEL_PATH = "runs/detect/train/weights/best.pt"
-INPUT_VIDEO = "videos/mycat_test.mp4"
-CONF_THRESHOLD = 0.05  # mostra i box solo quando é sicuro almeno per il 30%
 
+INPUT_VIDEO = "videos/mycat_test.mp4"
+CONF_THRESHOLD = 0.1  # mostra i box solo quando é sicuro almeno per il 30%
+
+# lista modelli con path
+model_options = {
+    "LocalModelFromScratch": "runs/detect/train/weights/best.pt",
+    "ColabModelFromScratch": "runs_colab_fromscratch/content/runs/detect/train/weights/best.pt",
+    "ColabModelPretrained": "runs_colab_pretrained/content/runs/detect/train2/weights/best.pt"
+}
+
+print("Seleziona un modello:")
+for i, nome_modello in enumerate(model_options, start=1):
+    print(f"{i}. {nome_modello}")
+
+nomi_modelli = list(model_options.keys())
+while True:
+    try:
+        scelta = int(input("Inserisci il numero del modello (1-3): "))
+        if 1 <= scelta <= len(nomi_modelli):
+            modello_scelto = nomi_modelli[scelta - 1]
+            path_scelto = model_options[modello_scelto]
+            break
+        else:
+            print("Numero non valido, riprovare")
+    except ValueError:
+        print("Inpunt non valido, inserire un numero")
+
+MODEL_PATH = path_scelto
 process_video_with_yolo(MODEL_PATH, INPUT_VIDEO, CONF_THRESHOLD)
