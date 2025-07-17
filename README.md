@@ -72,10 +72,13 @@ These scripts enable training using Google’s cloud resources, allowing you to 
 ## 🖼️ Example Output
 
 ![Cat detected example](images/my_cat_image_LocalModelFromScratch.jpg)
+
 *Figure 1: Example of cat detection using YOLOv11n from scratch (local Model).*
 
 ![Cat detected example](images/my_cat_image_ColabModelFromScratch.jpg)
-*Figure 1: Example of cat detection using YOLOv11n from scratch (Colab Model).*
+
+*Figure 2: Example of cat detection using YOLOv11n from scratch (Colab Model).*
 
 ![Cat detected example](images/my_cat_image_ColabModelPretrained.jpg)
-*Figure 1: Example of cat detection using YOLOv11n pretrained (Colab Model).*
+
+*Figure 3: Example of cat detection using YOLOv11n pretrained (Colab Model).*
