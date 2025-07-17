@@ -13,7 +13,7 @@ while True:
         break
     
     # Rileva gatti nel frame
-    results = model(frame)
+    results = model(frame, conf=0.8)
     
     # Mostra i risultati
     annotated_frame = results[0].plot()
