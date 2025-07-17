@@ -9,7 +9,7 @@ The model identifies cats by drawing bounding boxes around them, along with conf
 - **570 training images**
 - **124 validation images**
 
-The dataset was partially annotated manually.
+The dataset was partially annotated manually, using CVAT.
 
 ## 🧠 Training Details
 
@@ -32,34 +32,53 @@ Three separate training sessions were performed on the same dataset:
 Make sure the following packages are installed:
 
 ```bash
-pip install torch torchvision opencv-python numpy
-```
-
-If you’re using the Ultralytics YOLOv11 implementation, you may also need:
-
-```bash
 pip install ultralytics
 ```
 
-> ⚠️ If you're using a custom YOLOv11 version, make sure the repository is cloned and properly set up.
-
-## 📂 Project Structure (example)
+## 📂 Project Structure
 
 ```
 CatDetector/
-├── dataset/
+├── Dataset/
 │   ├── images/
 │   └── labels/
+├── colab_scripts/
+│   ├── CatDetector.ipynb
+│   └── config.yaml
+├── images/
+├── videos/
 ├── runs/
-│   └── train/            # training output
+├── runs_colab_fromscratch/
+├── runs_colab_pretrained/
 ├── predictimage.py
 ├── predictvideo.py
-├── webcam.py
-├── yolo11n.yaml
-├── yolo11n.pt
-└── README.md
+├── webcamscript.py
+├── main.py
+├── config.yaml
+├── README.md
+
 ```
+### 📂 colab_scripts
+
+The `colab_scripts` folder contains two files used for training the model on Google Colab with integration to Google Drive:
+
+- `CatDetector.ipynb`: a Jupyter notebook with the full training code for Colab.
+
+- `config.yaml`: configuration file used during training.
+
+These scripts enable training using Google’s cloud resources, allowing you to leverage more powerful hardware without running the training locally.
+
 
 ## 🖼️ Example Output
 
-*Add sample images showing detected cats with bounding boxes and confidence scores here.*
+![Cat detected example](images/my_cat_image_LocalModelFromScratch.jpg)
+
+*Figure 1: Example of cat detection using YOLOv11n from scratch (local Model).*
+
+![Cat detected example](images/my_cat_image_ColabModelFromScratch.jpg)
+
+*Figure 1: Example of cat detection using YOLOv11n from scratch (Colab Model).*
+
+![Cat detected example](images/my_cat_image_ColabModelPretrained.jpg)
+
+*Figure 1: Example of cat detection using YOLOv11n pretrained (Colab Model).*
