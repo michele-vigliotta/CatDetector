@@ -1,4 +1,4 @@
-# CatDetector
+<h1 aling="center">CatDetector </h1>
 
 **CatDetector** is an object detection project based on **YOLOv11**, designed to detect **cats** in images, videos, and real-time webcam streams.
 
