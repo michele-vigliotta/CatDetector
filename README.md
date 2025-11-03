@@ -1,4 +1,12 @@
-<h1 aling="center">CatDetector </h1>
+<h1 align="center">CatDetector </h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Ultralytics-0061FF?logo=ultralytics&logoColor=white" alt="Ultralytics">
+  <img src="https://img.shields.io/badge/YOLOv11-00FFFF?logoColor=white" alt="YOLO v11">
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?logo=googlecolab&logoColor=white" alt="Google Colab">
+  <img src="https://img.shields.io/badge/CVAT-1890FF?logoColor=white" alt="CVAT">
+</p>
 
 **CatDetector** is an object detection project based on **YOLOv11**, designed to detect **cats** in images, videos, and real-time webcam streams.
 
