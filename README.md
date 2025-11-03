@@ -1,8 +1,8 @@
-# 🐱 CatDetector
+# CatDetector
 
 **CatDetector** is an object detection project based on **YOLOv11**, designed to detect **cats** in images, videos, and real-time webcam streams.
 
-## 📌 Overview
+## Overview
 
 The model identifies cats by drawing bounding boxes around them, along with confidence scores. It was trained on a **custom dataset** consisting of:
 
@@ -11,7 +11,7 @@ The model identifies cats by drawing bounding boxes around them, along with conf
 
 The dataset was partially annotated manually, using CVAT.
 
-## 🧠 Training Details
+## Training Details
 
 Three separate training sessions were performed on the same dataset:
 
@@ -35,30 +35,7 @@ Make sure the following packages are installed:
 pip install ultralytics
 ```
 
-## 📂 Project Structure
-
-```
-CatDetector/
-├── Dataset/
-│   ├── images/
-│   └── labels/
-├── colab_scripts/
-│   ├── CatDetector.ipynb
-│   └── config.yaml
-├── images/
-├── videos/
-├── runs/
-├── runs_colab_fromscratch/
-├── runs_colab_pretrained/
-├── predictimage.py
-├── predictvideo.py
-├── webcamscript.py
-├── main.py
-├── config.yaml
-├── README.md
-
-```
-### 📂 colab_scripts
+### colab_scripts
 
 The `colab_scripts` folder contains two files used for training the model on Google Colab with integration to Google Drive:
 
@@ -69,7 +46,7 @@ The `colab_scripts` folder contains two files used for training the model on Goo
 These scripts enable training using Google’s cloud resources, allowing you to leverage more powerful hardware without running the training locally.
 
 
-## 🖼️ Example Output
+## Example Output
 
 ### Figure 1: Example of cat detection using YOLOv11n from scratch (local Model)
 ![Cat detected example](images/my_cat_image_LocalModelFromScratch.jpg)
