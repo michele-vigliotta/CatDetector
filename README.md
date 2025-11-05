@@ -1,66 +1,57 @@
-<h1 align="center">CatDetector </h1>
+<h1 align="center">CatDetector</h1> 
+<p align="center"> 
+  <img src="https://img.shields.io/badge/Language-Python-blue.svg" alt="Python"> 
+  <img src="https://img.shields.io/badge/Framework-Ultralytics%20YOLOv11-red.svg" alt="YOLOv11"> 
+  <img src="https://img.shields.io/badge/Platform-Google%20Colab-yellow.svg" alt="Google Colab"> 
+  <img src="https://img.shields.io/badge/Annotation-CVAT-1890FF.svg" alt="CVAT"> 
+</p> 
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Ultralytics-0061FF?logo=ultralytics&logoColor=white" alt="Ultralytics">
-  <img src="https://img.shields.io/badge/YOLOv11-00FFFF?logoColor=white" alt="YOLO v11">
-  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?logo=googlecolab&logoColor=white" alt="Google Colab">
-  <img src="https://img.shields.io/badge/CVAT-1890FF?logoColor=white" alt="CVAT">
-</p>
+<p> 
+  <strong>CatDetector</strong> is an object detection system based on <strong>YOLOv11</strong>, designed to detect <strong>cats</strong> in images, videos, and real-time webcam streams. 
+</p> 
 
-**CatDetector** is an object detection project based on **YOLOv11**, designed to detect **cats** in images, videos, and real-time webcam streams.
+<h2>Overview</h2> 
+<p> 
+  The model identifies cats by drawing bounding boxes with confidence scores. It was trained on a <strong>custom dataset</strong> consisting of: 
+</p> 
+<ul> 
+  <li><strong>570</strong> training images</li> 
+  <li><strong>124</strong> validation images</li>
+</ul> 
 
-## Overview
+<p>
+  The dataset was partially annotated manually using CVAT.
+</p> 
 
-The model identifies cats by drawing bounding boxes around them, along with confidence scores. It was trained on a **custom dataset** consisting of:
+<h2>Training Details</h2> 
 
-- **570 training images**
-- **124 validation images**
+<p>Three separate training sessions were performed on the same dataset:</p>
+<ol> 
+  <li><strong>YOLOv11n from scratch (local):</strong><br> 80 epochs — Configuration: <code>yolo11n.yaml</code> </li> 
+  <li><strong>YOLOv11n from scratch (Google Colab):</strong><br> 150 epochs — Configuration: <code>yolo11n.yaml</code> </li> 
+  <li><strong>YOLOv11n with pretrained weights (Google Colab):</strong><br> 150 epochs — Starting from <code>yolo11n.pt</code> </li>
+</ol> 
 
-The dataset was partially annotated manually, using CVAT.
+<h2>Dependencies</h2> 
 
-## Training Details
+<p>Install the required packages:</p> <pre><code>pip install ultralytics </code></pre>
 
-Three separate training sessions were performed on the same dataset:
+<h2>Colab Scripts</h2> 
 
-1. **YOLOv11n from scratch (local):**
-   - 80 epochs  
-   - Configuration: `yolo11n.yaml`
+<p> The <code>colab_scripts</code> folder contains the files used for training the model on Google Colab with Google Drive integration: </p> 
+<ul> 
+  <li><code>CatDetector.ipynb</code>: Jupyter notebook with the full training workflow.</li> 
+  <li><code>config.yaml</code>: Configuration file used during training.</li> 
+</ul> 
+<p> These scripts enable training using Google’s cloud resources, allowing you to leverage more powerful hardware compared to local training. </p> 
 
-2. **YOLOv11n from scratch (Google Colab):**
-   - 150 epochs  
-   - Configuration: `yolo11n.yaml`
+<h2>Example Output</h2> 
 
-3. **YOLOv11n with pretrained weights (Google Colab):**
-   - 150 epochs  
-   - Starting from `yolo11n.pt`
+<p><strong>Figure 1:</strong> Cat detection using YOLOv11n from scratch (Local Model)</p> 
+<p align="center"> <img src="images/my_cat_image_LocalModelFromScratch.jpg" width="600"> </p>
 
-## 🛠️ Dependencies
+<p><strong>Figure 2:</strong> Cat detection using YOLOv11n from scratch (Colab Model)</p>
+<p align="center"> <img src="images/my_cat_image_ColabModelFromScratch.jpg" width="600"> </p>
 
-Make sure the following packages are installed:
-
-```bash
-pip install ultralytics
-```
-
-### colab_scripts
-
-The `colab_scripts` folder contains two files used for training the model on Google Colab with integration to Google Drive:
-
-- `CatDetector.ipynb`: a Jupyter notebook with the full training code for Colab.
-
-- `config.yaml`: configuration file used during training.
-
-These scripts enable training using Google’s cloud resources, allowing you to leverage more powerful hardware without running the training locally.
-
-
-## Example Output
-
-### Figure 1: Example of cat detection using YOLOv11n from scratch (local Model)
-![Cat detected example](images/my_cat_image_LocalModelFromScratch.jpg)
-
-### Figure 2: Example of cat detection using YOLOv11n from scratch (Colab Model)
-![Cat detected example](images/my_cat_image_ColabModelFromScratch.jpg)
-
-### Figure 3: Example of cat detection using YOLOv11n pretrained (Colab Model)
-![Cat detected example](images/my_cat_image_ColabModelPretrained.jpg)
+<p><strong>Figure 3:</strong> Cat detection using YOLOv11n pretrained (Colab Model)</p> 
+<p align="center"> <img src="images/my_cat_image_ColabModelPretrained.jpg" width="600"> </p>
