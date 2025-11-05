@@ -48,10 +48,10 @@
 <h2>Example Output</h2> 
 
 <p><strong>Figure 1:</strong> Cat detection using YOLOv11n from scratch (Local Model)</p> 
-<p align="center"> <img src="images/my_cat_image_LocalModelFromScratch.jpg" width="600"> </p>
+<p align="center"> <img src="images/my_cat_image_LocalModelFromScratch.jpg" width="500"> </p>
 
 <p><strong>Figure 2:</strong> Cat detection using YOLOv11n from scratch (Colab Model)</p>
-<p align="center"> <img src="images/my_cat_image_ColabModelFromScratch.jpg" width="600"> </p>
+<p align="center"> <img src="images/my_cat_image_ColabModelFromScratch.jpg" width="500"> </p>
 
 <p><strong>Figure 3:</strong> Cat detection using YOLOv11n pretrained (Colab Model)</p> 
-<p align="center"> <img src="images/my_cat_image_ColabModelPretrained.jpg" width="600"> </p>
+<p align="center"> <img src="images/my_cat_image_ColabModelPretrained.jpg" width="500"> </p>
